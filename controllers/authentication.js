@@ -8,9 +8,7 @@ function tokenForUser(user) {
   // iat = issued at time
   // exp = expiration time/
   const timestamp = new Date().getTime();
-  const expiration = new Date();
-  expiration.setDate(expiration.getDate() + 30); // 30 days expiration
-  expiration = expiration.getTime();
+  const expiration = new Date().getTime() + 300000000000;
   return jwt.encode({ sub: user.id, iat: timestamp, exp: expiration } , config.secret);
 }
 

@@ -43,6 +43,7 @@ const jwtOptions = {
 // Create JWT Strategy
 // Payload is the decoded JWT token
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
+
   // See if the user id and payload exists in our database
   // If it does call 'done' with that user
   // otherwise call 'done' without a user object
